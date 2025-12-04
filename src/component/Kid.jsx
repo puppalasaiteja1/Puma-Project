@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Link } from "react-router-dom";
+import {toast } from 'react-toastify';
 
 const Kid = () => {
   let [kid, setKid] = useState([])
@@ -47,7 +48,7 @@ const Kid = () => {
       (item) => item.productName === eachKid.kidName
     );
     if (exists) {
-      alert("Already in favourites ❤️");
+      toast.warning("Already in favourites ❤️");
       return;
     }
 
@@ -63,15 +64,15 @@ const Kid = () => {
     favList.push(favItem);
     localStorage.setItem("favourites", JSON.stringify(favList));
 
-    alert("Added to favourites ❤️");
+    toast.success("Added to favourites ❤️");
   };
 
   return (
     <>
-    <Link to={"/"}><button className='ml-10 mt-2 border-2 w-30 font-semibold bg-red-500 text-white h-10 rounded-xl'>Back</button></Link>
-    <div className='border-2 w-380 m-auto mt-10 flex gap-2 flex-wrap'>
+    <Link to={"/"}><button className='ml-10 mt-2 w-30 font-semibold bg-red-500 text-white h-10 rounded-xl'>Back</button></Link>
+    <div className='w-380 m-auto mt-10 flex gap-2 flex-wrap'>
       {kid.map((eachKid) => (
-        <div key={eachKid.kidId} className='border-2 p-3 rounded-lg h-130 w-120 ml-2'>
+        <div key={eachKid.kidId} className='p-3 rounded-lg h-130 w-120 ml-2'>
           <img src={eachKid.kidImage} className='w-full h-90 object-cover' />
           <div className='flex justify-between'>
             <div>

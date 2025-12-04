@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Link } from "react-router-dom";
-
+import {toast } from 'react-toastify';
 const Shoe = () => {
   let [shoe, setShoe] = useState([])
   let navTo = useNavigate()
@@ -45,7 +45,7 @@ const Shoe = () => {
     );
 
     if (exists) {
-      alert("Already in favourites ❤️")
+     toast.error("Already in favourites ❤️")
       return
     }
 
@@ -59,16 +59,16 @@ const Shoe = () => {
     favList.push(favItem);
     localStorage.setItem("favourites", JSON.stringify(favList));
 
-    alert("Added to favourites ❤️");
+    toast.success("Added to favourites ❤️");
   };
 
   return (
     <>
-    <Link to={"/"}><button className='ml-10 mt-2 border-2 w-30 font-semibold bg-red-500 text-white h-10 rounded-xl'>Back</button></Link>
-    <div className='border-2 w-380 m-auto mt-5 flex gap-2 flex-wrap'>
+    <Link to={"/"}><button className='ml-10 mt-2  w-30 font-semibold bg-red-500 text-white h-10 rounded-xl'>Back</button></Link>
+    <div className='w-380 m-auto mt-5 flex gap-2 flex-wrap'>
       
       {shoe.map((eachShoe) => (
-        <div key={eachShoe.shoeId} className='border-2 p-3 rounded-lg h-130 w-120 ml-2'>
+        <div key={eachShoe.shoeId} className='p-3 rounded-lg h-130 w-120 ml-2'>
           <img src={eachShoe.shoeImage} className='w-full h-90 object-cover' />
 
           <div className='flex justify-between'>

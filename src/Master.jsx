@@ -10,6 +10,7 @@ import Slide from './component/Slide'
 import Cart from './component/Cart'
 import Home from './Home'
 import Wishlist from './component/Wishlist'
+import Search from './component/Search'
 
 const Master = () => {
   return (
@@ -25,6 +26,7 @@ const Master = () => {
         <Route path='/slide' element={<Slide/>}></Route>
         <Route path='/cart' element={<Cart/>}></Route>
         <Route path='/wishlist' element={<Wishlist/>}></Route>
+        <Route path='/search' element={<Search/>}></Route>
        </Routes>
     </div>
   )

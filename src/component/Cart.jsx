@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import {toast } from 'react-toastify';
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
   const navTo = useNavigate();
@@ -126,9 +126,6 @@ const Cart = () => {
                       onClick={() => removeItem(item.cartId)}
                     >
                       ❌ Remove
-                    </button>
-                    <button className="text-blue-600 font-medium">
-                      ❤️ Save for later
                     </button>
                   </div>
                 </div>

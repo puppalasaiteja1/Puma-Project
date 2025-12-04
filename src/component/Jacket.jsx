@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Link } from "react-router-dom";
+import {toast } from 'react-toastify';
 
 const Jacket = () => {
   let [jacket, setJacket] = useState([])
@@ -45,7 +46,7 @@ const Jacket = () => {
     )
 
     if (exists) {
-      alert("Already in favourites ❤️")
+      toast.error("Already in favourites ❤️")
       return
     }
 
@@ -59,15 +60,15 @@ const Jacket = () => {
     favList.push(favItem)
     localStorage.setItem("favourites", JSON.stringify(favList))
 
-    alert("Added to favourites ❤️")
+    toast.success("Added to favourites ❤️")
   }
 
   return (
     <>
-    <Link to={"/"}><button className='ml-10 mt-2 border-2 w-30 font-semibold bg-red-500 text-white h-10 rounded-xl'>Back</button></Link>
-    <div className='border-2 w-380 m-auto mt-10 flex gap-2 flex-wrap'>
+    <Link to={"/"}><button className='ml-10 mt-2 w-30 font-semibold bg-red-500 text-white h-10 rounded-xl'>Back</button></Link>
+    <div className='w-380 m-auto mt-10 flex gap-2 flex-wrap'>
       {jacket.map((eachJacket) => (
-        <div key={eachJacket.jacketId} className='border-2 p-3 rounded-lg h-130 w-120 ml-2'>
+        <div key={eachJacket.jacketId} className='p-3 rounded-lg h-130 w-120 ml-2'>
           <img
             src={eachJacket.jacketImage}
             className='w-full h-90 object-cover'

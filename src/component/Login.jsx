@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../component/login.css"
 import {Link, useNavigate} from "react-router-dom" 
 import axios from 'axios'
+import {toast } from 'react-toastify';
 
 const Login = () => {
    let[email,setEmail]=useState("");
@@ -21,11 +22,11 @@ const Login = () => {
     .then((result)=>{
       console.log(result.data);
        if (result.data === true) {
-          alert("Login Successful");
+          toast.success("Login Success")
           sessionStorage.setItem("isLogin", "true");
           navTo("/")
         } else {
-          alert("Invalid Credentials");
+          toast.success("Invalid Credentials");
         }
       
     })

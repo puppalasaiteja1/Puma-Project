@@ -10,7 +10,7 @@ import img7 from "./assets/section101.avif";
 import img8 from "./assets/section102.avif";
 import img9 from "./assets/section11.avif";
 import img10 from "./assets/section12.avif";
-import { Link } from "react-router-dom";
+import { Link, Links } from "react-router-dom";
 import { FaSearch, FaHeart, FaShoppingCart, FaUser } from "react-icons/fa";
 
 const Home = () => {
@@ -28,33 +28,34 @@ const Home = () => {
         <div className="flex justify-between h-18 w-380 m-auto">
           <div className="flex w-240 items-center">
               <img src={img1} alt="" className="h-13 w-15 invert p-1 m-y-4" />          
-            <ul className="flex w-240 justify-between items-center font-bold text-white p-5">
+            <ul className="flex w-240 justify-around items-center font-bold text-white p-5">
+              
+              <Link to={"/shoe"}>
               <li>
-                  New
+                  Shoe
               </li>
+              </Link>             
+              <Link to={"/jacket"}>
               <li>
-                  Men                
+                Jacket
               </li>
+              </Link>
+              <Link to={"/slide"}>
               <li>
-                  Women
+                 Slides
               </li>
-              <li>
-                 Sports
+              </Link>
+              <Link to={"/shirt"}>
+                 <li>
+                 Shirts
               </li>
-              <li>
-                 Motorsport
-              </li>
-              <li>
-                 Lifestyle
-              </li>
+              </Link>
+              
               <Link to={"/kid"}>
                 <li>
                   Kids
                 </li>
               </Link>
-              <li>
-                Sale
-              </li>
             </ul>
           </div>
           <div className="w-70 flex justify-between text-white items-center">
@@ -62,7 +63,7 @@ const Home = () => {
               <button className="mr-2 p-2">
                 <FaSearch size={14} />
               </button>
-              <span className="text-sm font-bold">SEARCH</span>
+             <Link to={"/search"}> <span className="text-sm font-bold">SEARCH</span></Link>
             </div>
 
             <Link to="/wishlist" className="p-1">
@@ -105,12 +106,9 @@ const Home = () => {
           <div className="mt-6 flex gap-4">
             <Link to={"/shoe"}>
               <button className="bg-white text-black px-5 py-2 font-semibold">
-                SHOP BALLET
+                SHOP SHOE
               </button>
             </Link>
-            <button className="bg-white text-black px-5 py-2 font-semibold">
-              SHOP SPEEDCAT
-            </button>
           </div>
         </div>
       </div>
@@ -124,9 +122,11 @@ const Home = () => {
             ART THAT MOVES
           </h1>
           <p className="mt-2 text-lg">INSPIRED BY BMW ART CARS</p>
+          <Link to={"/jacket"}>
           <button className="mt-6 bg-white text-black px-5 py-2 font-semibold">
             SHOP NOW
           </button>
+          </Link>
         </div>
       </div>
       {/*Section2 ends */}
@@ -181,9 +181,12 @@ const Home = () => {
             <br />
             COLLECTION IS BACK
           </p>
+         
+         <Link to={"/shirt"}>
           <button className="mt-4 bg-black text-white px-6 py-3 font-semibold">
             SHOP NOW
           </button>
+         </Link>
         </div>
       </div>
       {/* Section6 ends */}
@@ -200,18 +203,7 @@ const Home = () => {
       {/* Section7 ends */}
 
       {/* Section9 starts */}
-      <div className="h-40 text-center mt-18">
-        <h1 className="text-3xl md:text-3xl lg:text-4xl font-bold font-display leading-tight text-[#181819]">
-          ICONS, REINVENTED
-        </h1>
-        <p className="font-display text-center mt-4 text-[#6e6e7e]">
-          SHOP THE LATEST & GREATEST
-        </p>
-      </div>
-      {/* Section9 ends */}
-
-      {/* Section10 starts */}
-      <div className="h-180 w-380 m-auto flex gap-4">
+      <div className="h-180 w-380 m-auto flex gap-4 border-2">
         <div className="relative w-1/2 h-180">
           <img src={img7} alt="" className="object-fit w-full h-full" />
           <h1 className="absolute bottom-6 left-1/2 -translate-x-1/2 text-5xl text-white font-bold">
@@ -226,10 +218,21 @@ const Home = () => {
           </h1>
         </div>
       </div>
+      {/* Section9 ends */}
+
+       {/* Section10 starts */}
+      <div className="h-40 text-center mt-18">
+        <h1 className="text-3xl md:text-3xl lg:text-4xl font-bold font-display leading-tight text-[#181819]">
+          ICONS, REINVENTED
+        </h1>
+        <p className="font-display text-center mt-4 text-[#6e6e7e]">
+          SHOP THE LATEST & GREATEST
+        </p>
+      </div> 
       {/* Section10 ends */}
 
       {/* Section11 starts */}
-      <div className="relative border-2 h-130 mt-15">
+      <div className="relative  h-130 mt-1">
         <img src={img9} alt="" />
         <div className="absolute top-1/2 left-16 -translate-y-1/2 text-white ">
           <h1 className="text-4xl font-extrabold leading-tight">
@@ -237,12 +240,11 @@ const Home = () => {
           </h1>
           <p className="mt-3 text-lg leading-snug">OWN THE NEW SEASON</p>
           <div className="mt-6 flex gap-4">
-            <button className="bg-white text-black px-5 py-2 font-semibold">
-              FOR HIM
+              <Link to={"/kid"}>
+               <button className="bg-white text-black px-5 py-2 font-semibold">
+              FOR KIDS
             </button>
-            <button className="bg-white text-black px-5 py-2 font-semibold">
-              FOR HER
-            </button>
+              </Link>            
           </div>
         </div>
       </div>
@@ -256,12 +258,11 @@ const Home = () => {
             LAST MOVE BEFORE IT'S GONE
           </h1>
           <div className="mt-6 flex gap-4">
+            <Link to={"/slide"}>
             <button className="bg-black text-white px-5 py-2 font-semibold ml-52">
               SHOP FOOTWEAR
             </button>
-            <button className="bg-black text-white px-5 py-2 font-semibold">
-              SHOP APPAREL
-            </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -301,8 +302,8 @@ const Home = () => {
               </ul>
             </div>
             <div className="w-55 h-85 p-7 font-semibold mt-10">
+              <h3 className="text-2xl pb-2">Contact us</h3>
               <ul>
-                <li>Contact us</li>
                 <li>Promotions & Sale</li>
                 <li>Track Order</li>
                 <li>Shoe care</li>
@@ -342,6 +343,7 @@ const Home = () => {
               </ul>
             </div>
           </div>
+          <hr />
         </div>
       </div>
       {/* Section14 ends */}

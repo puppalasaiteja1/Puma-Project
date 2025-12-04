@@ -34,28 +34,40 @@ const Wishlist = () => {
             </button>
           </div>
         ) : (
-          favItems.map((item, index) => (
-            <div key={index} className="flex items-center gap-6 border-b pb-4 mb-4">
-              <img
-                src={item.productImage}
-                alt={item.productName}
-                className="w-32 h-32 rounded border"
-              />
-              <div className="flex-1">
-                <h2 className="font-bold text-lg">{item.productName}</h2>
-                <p className="text-gray-700 capitalize">{item.category}</p>
-                <p className="text-green-600 font-bold text-xl">
-                  ₹{item.productPrice}
-                </p>
-                <button
-                  className="text-red-600 mt-3"
-                  onClick={() => removeFav(item.productName)}
-                >
-                  ❌ Remove
-                </button>
+          <>
+            {favItems.map((item, index) => (
+              <div
+                key={index}
+                className="flex items-center gap-6 border-b pb-4 mb-4"
+              >
+                <img
+                  src={item.productImage}
+                  alt={item.productName}
+                  className="w-32 h-32 rounded border"
+                />
+                <div className="flex-1">
+                  <h2 className="font-bold text-lg">{item.productName}</h2>
+                  <p className="text-gray-700 capitalize">{item.category}</p>
+                  <p className="text-green-600 font-bold text-xl">
+                    ₹{item.productPrice}
+                  </p>
+                  <button
+                    className="text-red-600 mt-3"
+                    onClick={() => removeFav(item.productName)}
+                  >
+                    ❌ Remove
+                  </button>
+                </div>
               </div>
-            </div>
-          ))
+            ))}
+
+            <button
+              className="px-6 py-3 bg-blue-500 text-white rounded-md"
+              onClick={() => navTo("/")}
+            >
+              ⬅ Back to Home
+            </button>
+          </>
         )}
       </div>
     </div>

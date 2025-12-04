@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import "../component/register.css"
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
+import {toast } from 'react-toastify';
 
 const Register = () => {
  
@@ -15,7 +16,7 @@ const Register = () => {
         e.preventDefault();
         
        if (email === "" || password === "" || name==="") {
-             alert("Please enter Valid details");
+             toast.info("Please enter Valid details");
                return;
            }
 
