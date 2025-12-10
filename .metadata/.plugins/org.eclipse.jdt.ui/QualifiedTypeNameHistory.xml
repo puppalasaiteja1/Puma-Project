@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="org.hibernate.annotations.AnyDiscriminatorImplicitValues.Strategy"/>
+    <fullyQualifiedTypeName name="com.excelr.repository.ShoeRepo"/>
+    <fullyQualifiedTypeName name="com.excelr.entity.Shoe"/>
+    <fullyQualifiedTypeName name="com.excelr.repository.ShirtRepo"/>
+    <fullyQualifiedTypeName name="com.excelr.repository.KidsRepo"/>
+    <fullyQualifiedTypeName name="com.excelr.repository.SlideRepo"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="com.excelr.repository.JacketRepo"/>
+    <fullyQualifiedTypeName name="com.excelr.entity.Shirt"/>
+    <fullyQualifiedTypeName name="com.excelr.entity.Kids"/>
+    <fullyQualifiedTypeName name="com.excelr.entity.Jacket"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.excelr.entity.Slide"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Id"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.GeneratedValue"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.GenerationType"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Entity"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
+    <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaRepository"/>
+    <fullyQualifiedTypeName name="com.excelr.entity.Cart"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+</qualifiedTypeNameHistroy>

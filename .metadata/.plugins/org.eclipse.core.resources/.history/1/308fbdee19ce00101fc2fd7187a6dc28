@@ -1,0 +1,54 @@
+package com.excelr.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.excelr.entity.Shoe;
+import com.excelr.entity.Users;
+import com.excelr.requests.LoginRequest;
+import com.excelr.service.UserService;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+
+@RestController
+@CrossOrigin(origins = "*")
+public class UsersController {
+
+	@Autowired
+	UserService userService;
+
+	@PostMapping("/addUser")
+	public Users addUser(@RequestBody Users user) { // convert json into users
+		return userService.addUser(user); // saves data into the database
+	}
+	
+
+	@PostMapping("/loginUser")
+	public Boolean loginUser(@RequestBody LoginRequest loginRequest) { // convert json into users
+		return userService.loginUser(loginRequest); // check the email given by user and returns true and false
+
+	}
+
+	/*
+	 * http://localhost:8080/addUser
+	 * 
+	 * { "email": "abc@gami.com", "name": "John", "password": "abc123" }
+	 * 
+	 * http://localhost:8080/loginUser
+	 * 
+	 * { "email": "abc@gami.com", "password": "abc123" }
+	 * 
+	 * 
+	 */
+     
+	@GetMapping("/shoes")
+	public List<Shoe> getShoes(){
+		return userService.getAllshoes();
+	}
+}
