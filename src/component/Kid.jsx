@@ -15,7 +15,7 @@ const Kid = () => {
   }, [])
 
   const addToCart = (eachKid) => {
-    const isLogin = localStorage.getItem('isLogin')
+    const isLogin = sessionStorage.getItem('isLogin')
 
     if (isLogin !== 'true') {
       navTo('/login')
@@ -30,15 +30,15 @@ const Kid = () => {
 
       axios.post('http://localhost:8080/addCart', payload)
         .then(() => {
-          let count = parseInt(localStorage.getItem("cartCount")) || 0;
-          localStorage.setItem("cartCount", count + 1);
+          let count = parseInt(sessionStorage.getItem("cartCount")) || 0;
+          sessionStorage.setItem("cartCount", count + 1);
           navTo('/cart')
         })
         .catch(() => console.log('error while adding to cart'))
     }
   }
 
-  // ❤️ Save to Favourite (using localStorage)
+  
   const addToFav = (eachKid) => {
     // get old favourites from localStorage (or empty array if nothing)
     let favList = JSON.parse(localStorage.getItem("favourites")) || [];
