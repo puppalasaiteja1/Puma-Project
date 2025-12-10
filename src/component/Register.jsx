@@ -51,9 +51,7 @@ const Register = () => {
         <input type="text" className="input" placeholder='UserName' onChange={(e)=>setname(e.target.value)}/>
         <input type="password" className="input" placeholder="Password"  onChange={(e)=>setPassword(e.target.value)}/>
         
-        <p className="page-link">
-          <span className="page-link-label">Forgot Password?</span>
-        </p>
+      
         <button type="submit" className="form-btn">
           Log in
         </button>

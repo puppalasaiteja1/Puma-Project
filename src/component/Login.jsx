@@ -46,9 +46,7 @@ const Login = () => {
       <form className="form" onSubmit={loginData}>
         <input type="email" className="input" placeholder="Email" onChange={(e)=>setEmail(e.target.value)} />
         <input type="password" className="input" placeholder="Password" onChange={(e)=>setPassword(e.target.value)}/>
-        <p className="page-link">
-          <span className="page-link-label">Forgot Password?</span>
-        </p>
+      
         <button type="submit" className="form-btn">
           Log in
         </button>

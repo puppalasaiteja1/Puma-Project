@@ -19,7 +19,7 @@ const Home = () => {
   useEffect(() => {
     const storedCount = parseInt(localStorage.getItem("cartCount")) || 0;
     setCartCount(storedCount);
-  }, []); // 🔴 run only once when component mounts
+  }, []); 
 
   return (
     <>
@@ -283,70 +283,7 @@ const Home = () => {
       </div>
       {/* Section13 ends */}
 
-      {/* Section14 starts */}
-      <div className="border-2 h-140 mt-15 bg-black">
-        <div className="border-2 h-full w-368 m-auto text-white">
-          <div className="h-100 flex justify-around">
-            <div className="w-55 h-85 p-7 font-semibold mt-10">
-              <h3 className="text-2xl pb-2">support</h3>
-              <ul>
-                <li>Contact us</li>
-                <li>Promotions & Sale</li>
-                <li>Track Order</li>
-                <li>Shoe care</li>
-                <li>Tech Glossary</li>
-                <li>Initiate Return / Exchange</li>
-                <li>Sneakers</li>
-                <li>Nitro</li>
-                <li>Cookie Settings</li>
-              </ul>
-            </div>
-            <div className="w-55 h-85 p-7 font-semibold mt-10">
-              <h3 className="text-2xl pb-2">Contact us</h3>
-              <ul>
-                <li>Promotions & Sale</li>
-                <li>Track Order</li>
-                <li>Shoe care</li>
-                <li>Tech Glossary</li>
-                <li>Initiate Return / Exchange</li>
-                <li>Sneakers</li>
-                <li>Nitro</li>
-                <li>Cookie Settings</li>
-              </ul>
-            </div>
-            <div className="w-55 h-85 p-7 font-semibold mt-10">
-              <h3 className="text-2xl pb-2">About</h3>
-              <ul>
-                <li>Contact us</li>
-                <li>Promotions & Sale</li>
-                <li>Track Order</li>
-                <li>Shoe care</li>
-                <li>Tech Glossary</li>
-                <li>Initiate Return / Exchange</li>
-                <li>Sneakers</li>
-                <li>Nitro</li>
-                <li>Cookie Settings</li>
-              </ul>
-            </div>
-            <div className="w-75 h-85 p-7 font-semibold mt-10">
-              <h3 className="text-2xl pb-2">support</h3>
-              <ul>
-                <li>Contact us</li>
-                <li>Promotions & Sale</li>
-                <li>Track Order</li>
-                <li>Shoe care</li>
-                <li>Tech Glossary</li>
-                <li>Initiate Return / Exchange</li>
-                <li>Sneakers</li>
-                <li>Nitro</li>
-                <li>Cookie Settings</li>
-              </ul>
-            </div>
-          </div>
-          <hr />
-        </div>
-      </div>
-      {/* Section14 ends */}
+    
     </>
   );
 };

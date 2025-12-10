@@ -12,7 +12,7 @@ const Cart = () => {
       .then((res) => {
         setCartItems(res.data);
 
-        // 🔹 Sync localStorage cartCount with actual items
+        // Sync localStorage cartCount with actual items
         localStorage.setItem("cartCount", res.data.length.toString());
       })
       .catch(() => console.log("Error while fetching cart"));
@@ -46,7 +46,7 @@ const Cart = () => {
         setCartItems((prev) => {
           const updated = prev.filter((c) => c.cartId !== id);
 
-          // 🔹 Update localStorage cartCount after delete
+          // Update localStorage cartCount after delete
           let count = parseInt(localStorage.getItem("cartCount")) || 0;
           const newCount = Math.max(0, count - 1);
           if (newCount === 0) {
