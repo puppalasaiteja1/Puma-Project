@@ -102,8 +102,8 @@ public class UsersController {
 	@DeleteMapping("/cart")
 	public ResponseEntity<String> clearCart() {
 	    userService.clearCart();
-	    return ResponseEntity.ok("All items deleted");
-	}
+	    return ResponseEntity.ok("All items deleted")
+ 
 	@PutMapping("/cart/{id}")
 	public Cart updateCart(@PathVariable Integer id, @RequestBody Cart cart) {
 	    return userService.updateCartQuantity(id, cart.getQuantity());

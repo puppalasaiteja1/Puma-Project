@@ -3,7 +3,6 @@ package com.excelr.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -98,12 +97,7 @@ public class UsersController {
 	    userService.deleteCartItem(id);
 	    return "deleted";
 	}
-	
-	@DeleteMapping("/cart")
-	public ResponseEntity<String> clearCart() {
-	    userService.clearCart();
-	    return ResponseEntity.ok("All items deleted");
-	}
+ 
 	@PutMapping("/cart/{id}")
 	public Cart updateCart(@PathVariable Integer id, @RequestBody Cart cart) {
 	    return userService.updateCartQuantity(id, cart.getQuantity());

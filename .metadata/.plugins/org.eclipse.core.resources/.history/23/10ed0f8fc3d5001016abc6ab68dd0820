@@ -96,12 +96,7 @@ public class UserService {
 	public void deleteCartItem(Integer id) {
 	    cartRepo.deleteById(id);
 	}
-   
-	// inside UserService (add this method)
-	public void clearCart() {
-	    cartRepo.deleteAll();
-	}
-
+  
 	 
 	public Cart updateCartQuantity(Integer id, Integer quantity) {
 		Optional<Cart> optionalCart = cartRepo.findById(id);
