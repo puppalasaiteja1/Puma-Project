@@ -97,7 +97,6 @@ public class UserService {
 	    cartRepo.deleteById(id);
 	}
    
-	// inside UserService (add this method)
 	public void clearCart() {
 	    cartRepo.deleteAll();
 	}
